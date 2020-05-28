@@ -1,10 +1,20 @@
 (declare-project
-  :name "xbuild"
-  :description "Test cross building for ming"
-  :author "Matthew Carter"
-  :license "GPLv3"
-  :url "https://github.com/ahungry/xbuild/"
-  :repo "git+https://github.com/ahungry/xbuild.git")
+ :name "xbuild"
+ :description "Test cross building for ming"
+ :author "Matthew Carter"
+ :license "GPLv3"
+ :url "https://github.com/ahungry/xbuild/"
+ :repo "git+https://github.com/ahungry/xbuild.git"
+ # Optional urls to git repositories that contain required artifacts.
+ # :dependencies
+ # [
+ #  {
+ #   :repo
+ #   "https://github.com/ahungry/janet-xbuild.git"
+ #   :tag
+ #   "38e4702c57f78d48c301bc1f390a6856c8011374"
+ #   }]
+ )
 
 (defn build-mingw []
   (declare-native
@@ -34,5 +44,5 @@
   (build-default))
 
 # Temporary test to see if 'deps' will execute arbitrary code
-(pp "Printing arbitrary code from project.janet")
-(pp (os/shell "whoami"))
+# (pp "Printing arbitrary code from project.janet")
+# (pp (os/shell "whoami"))
