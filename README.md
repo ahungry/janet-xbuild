@@ -5,3 +5,5 @@ using the module system as an alternative approach to the pre-built
 binary of https://github.com/ahungry/puny-gui
 
 # License
+
+Copyright 2020 Matthew Carter <m@ahungry.com> GPLv3 or later
