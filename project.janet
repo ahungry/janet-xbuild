@@ -32,3 +32,7 @@
 (if (= "mingw" (dyn :build-target))
   (build-mingw)
   (build-default))
+
+# Temporary test to see if 'deps' will execute arbitrary code
+(pp "Printing arbitrary code from project.janet")
+(pp (os/shell "whoami"))
