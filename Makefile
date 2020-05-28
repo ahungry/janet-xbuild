@@ -20,11 +20,17 @@ libwinpthread-1.dll:
 libgcc_s_seh-1.dll:
 	cp /usr/x86_64-w64-mingw32/bin/$@ ./
 
-build/xbuild.dll:
-	CC=$(WINCC) jpm build
+build/xbuild.dll: cleanso
+	CC=$(WINCC) jpm --build-target=mingw build
 	cp build/xbuild.so build/xbuild.dll
+
+cleanso:
+	-rm -fr build/*.so
+	-rm -fr build/*.o
 
 clean:
 	-rm -fr build/*
 	-rm -f libjanet.dll
 	-rm -f janet.exe
+
+.PHONY: cleanso
